@@ -13,16 +13,11 @@ fs.writeFile("Persona.json", JSON.stringify(obj), (error) =>
     }
     else{
         console.log("JSON Created")
+        fs.readFile("Persona.json", "utf-8", (error, data) => {
+            console.log("Content File: " + data)
+        })
     }
 })
     
-fs.readFile("Persona.json", "utf-8", (error, data) =>
-{
-    if (error){
-        console.log(error)
-    }
-    else(
-        console.log("Content File: " + data)
-    )
-})
+
 

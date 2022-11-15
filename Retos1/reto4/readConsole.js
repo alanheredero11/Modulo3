@@ -5,34 +5,27 @@ const rl = readline.createInterface({
     output: process.stdout
 });
 
+let obj = {
+    name: "",
+    surname: "",
+    age: 0
+}
+
 function readConsole(callback){
 
-    let obj = {
-        name: "",
-        surname: "",
-        age: 0
-    }
+    rl.question("Escribe tu nombre: ", (awswer) => {
+        obj.name = awswer;
 
-    setTimeout(function () {
-        rl.question("Escribe tu nombre: ", (awswer) => {
-            obj.name = awswer;
-        })
-    }, 10)
-
-    setTimeout(function () {
         rl.question("Escribe tu apellido: ", (awswer) => {
             obj.surname = awswer;
-        })
-    }, 4000)
-    setTimeout(function () {
-        rl.question("Escribe tu edad: ", (awswer) => {
-            obj.age = awswer;
-        })
-    }, 8000)
 
-    setTimeout(function () {
-    callback(obj)
-    }, 12000)
+            rl.question("Escribe tu edad: ", (awswer) => {
+                obj.age = awswer;
+
+                callback(obj)
+            })
+        })
+    })
 }
 
 module.exports = { readConsole }

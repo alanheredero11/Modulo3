@@ -8,19 +8,11 @@ function writeAndRead(path, obj){
         }
         else {
             console.log("JSON Created")
+            fs.readFile(path, "utf-8", (error, data) => {
+                console.log("Content File: " + data)
+            })
         }
     })
-
-    fs.readFile(path, "utf-8", (error, data) => {
-        if (error) {
-            console.log(error)
-        }
-        else (
-            console.log("Content File: " + data)
-        )
-    })
-
-
 
 }
 
