@@ -5,13 +5,13 @@ const rl = readline.createInterface({
     output: process.stdout
 });
 
-let obj = {
-    name: "",
-    surname: "",
-    age: 0
-}
-
 function readConsole(callback){
+
+    let obj = {
+        name: "",
+        surname: "",
+        age: 0
+    }
 
     rl.question("Escribe tu nombre: ", (awswer) => {
         obj.name = awswer;
@@ -22,7 +22,7 @@ function readConsole(callback){
             rl.question("Escribe tu edad: ", (awswer) => {
                 obj.age = awswer;
 
-                callback(obj)
+                callback("Pesona.json", obj)
             })
         })
     })
