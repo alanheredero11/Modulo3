@@ -2,10 +2,24 @@ let fs = require('fs');
 
 function writeAndRead(path, obj){
 
-    let objson = JSON.stringify(obj);
-    fs.writeFileSync(path, objson);
+    fs.writeFile(path, JSON.stringify(obj), (error) => {
+        if (error) {
+            console.log(error)
+        }
+        else {
+            console.log("JSON Created")
+        }
+    })
 
-    console.log(JSON.parse(fs.readFileSync(path)))
+    fs.readFile(path, "utf-8", (error, data) => {
+        if (error) {
+            console.log(error)
+        }
+        else (
+            console.log("Content File: " + data)
+        )
+    })
+
 
 
 }

@@ -2,17 +2,27 @@ const fs = require('fs');
 
 let obj = {
     name: "Alan",
-    surname: "Hereder",
+    surname: "Heredero",
     age: 22
 }
-
-function printRead (obj) {
-
-    let objson = JSON.stringify(obj)
-    fs.writeFileSync("Persona.json", objson)
     
-    console.log(JSON.parse(fs.readFileSync("Persona.json")));
+fs.writeFile("Persona.json", JSON.stringify(obj), (error) => 
+{
+    if(error){
+        console.log(error)
+    }
+    else{
+        console.log("JSON Created")
+    }
+})
+    
+fs.readFile("Persona.json", "utf-8", (error, data) =>
+{
+    if (error){
+        console.log(error)
+    }
+    else(
+        console.log("Content File: " + data)
+    )
+})
 
-}
-
-printRead(obj);
