@@ -22,7 +22,7 @@ function readConsole(callback){
             rl.question("Escribe tu edad: ", (awswer) => {
                 obj.age = awswer;
 
-                callback("Pesona.json", obj)
+                callback(obj)
             })
         })
     })
