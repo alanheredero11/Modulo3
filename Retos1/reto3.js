@@ -1,5 +1,10 @@
 const fs = require('fs');
-const readline = require('readline-sync')
+const readline = require('readline')
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
+
 
 let obj = {
     name: "",
@@ -8,18 +13,44 @@ let obj = {
 }
 
 
+setTimeout(function (){
+    rl.question("Escribe tu nombre: ", (awswer) =>
+    {  
+        obj.name = awswer; 
+    })
+}, 10)
 
-obj.name = readline.question("Escribe tu nombre: ") 
-obj.surname = readline.question("Escribe tu apellido: ") 
-obj.age = readline.question("Escribe tu edad: ") 
+setTimeout(function () {
+    rl.question("Escribe tu apellido: ", (awswer) => 
+    {
+        obj.surname = awswer;
+    })
+}, 4000)
+setTimeout(function () {
+    rl.question("Escribe tu edad: ", (awswer) => 
+    {
+        obj.age = awswer;
+    })
+}, 8000)
 
-function printRead(obj) {
 
-    let objson = JSON.stringify(obj)
-    fs.writeFileSync("Persona.json", objson)
+setTimeout(function () {
 
-    console.log(JSON.parse(fs.readFileSync("Persona.json")));
+    fs.writeFile("Persona.json", JSON.stringify(obj), (error) => {
+        if (error) {
+            console.log(error)
+        }
+        else {
+            console.log("JSON Created")
+        }
+    })
 
-}
-
-printRead(obj);
+    fs.readFile("Persona.json", "utf-8", (error, data) => {
+        if (error) {
+            console.log(error)
+        }
+        else (
+            console.log("Content File: " + data)
+        )
+    })
+}, 12000)
