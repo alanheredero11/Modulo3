@@ -1,6 +1,7 @@
 let R = require('./readConsole')
 let W = require('./writeAndReadObject')
 
-W.writeAndRead("Persona.json", {nombre: "alan", apellido: "heredero", edad: 22});
+R.readConsole(W.writeAndRead)
 
-// R.readConsole(console.log);
+// W.writeAndRead("Persona.json", R.readConsole(JSON));
+
