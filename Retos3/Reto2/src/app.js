@@ -1,6 +1,6 @@
 const express = require("express");
 const cors = require("cors");
-const userRouters = require("./routers/professional.routers");
+const userRouters = require("./routers/professionales.routers");
 const errorHandling = require("./error/errorHandling");
 
 const app = express();
