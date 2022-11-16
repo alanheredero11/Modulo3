@@ -71,14 +71,15 @@ function putPro(request, response)
     let id = request.body.id
     if (professional != null)
     {
-        professional[id].name =                 request.body.name; 
-        professional[id].weight =               request.body.age;
-        professional[id].height =               request.body.weight;
-        professional[id].altura =               request.body.height;
-        professional[id].isRetired =            request.body.isRetired;
-        professional[id].nationality =          request.body.nationality;
-        professional[id].oscarsNumber =         request.body.oscarsNumber;
-        professional[id].profession =           request.body.profession;
+        professional[id].name                       = request.body.name; 
+        professional[id].age                        = request.body.age; 
+        professional[id].weight                     = request.body.weight;
+        professional[id].height                     = request.body.height;
+        professional[id].altura                     = request.body.altura;
+        professional[id].isRetired                  = request.body.isRetired;
+        professional[id].nationality                = request.body.nationality;
+        professional[id].oscarsNumber               = request.body.oscarsNumber;
+        professional[id].profession                 = request.body.profession;
 
 
         respuesta                   = {error: false, codigo: 200,
