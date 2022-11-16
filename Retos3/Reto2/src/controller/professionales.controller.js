@@ -1,6 +1,6 @@
 let Pro = require ("../professional")
 
-let professional = [new Pro("alan", 02, 02, 02), new Pro("alan", 12, 12, 12), new Pro("alan", 22, 22, 22), new Pro("alan", 32, 32, 32)]
+let professional = [new Pro("alan", 02, 02, 02, 02, 02, 02, 02), new Pro("alan", 12, 12, 02, 02, 02, 02, 02), new Pro("alan", 22, 22, 02, 02, 02, 02, 02), new Pro("alan", 32, 32, 02, 02, 02, 02, 02)]
 
 function getStart(request, response)
 {
@@ -48,14 +48,14 @@ function postPro(request, response)
     console.log(request.body)
     
     
-    professional.push(new Pro(  request.body.nombre,
-                                request.body.edad,
-                                request.body.peso,
-                                request.body.altura,
-                                // request.body.retirado,
-                                // request.body.nacionalidad,
-                                // request.body.numeroOscars,
-                                // request.body.profession
+    professional.push(new Pro(  request.body.name,
+                                request.body.age,
+                                request.body.weight,
+                                request.body.height,
+                                request.body.isRetired,
+                                request.body.nationality,
+                                request.body.oscarsNumber,
+                                request.body.profession
                              ))
         
     respuesta = {error: false, codigo: 200,
@@ -71,14 +71,14 @@ function putPro(request, response)
     let id = request.body.id
     if (professional != null)
     {
-        professional[id].name             = request.body.nombre; 
-        professional[id].weight           = request.body.edad;
-        professional[id].height           = request.body.peso;
-        professional[id].altura           = request.body.altura;
-        professional[id].isRetired        = request.body.retirado;
-        professional[id].nationality      = request.body.nacionalidad;
-        professional[id].oscarsNumber     = request.body.numeroOscars;
-        professional[id].profession       = request.body.profession;
+        professional[id].name =                 request.body.name; 
+        professional[id].weight =               request.body.age;
+        professional[id].height =               request.body.weight;
+        professional[id].altura =               request.body.height;
+        professional[id].isRetired =            request.body.isRetired;
+        professional[id].nationality =          request.body.nationality;
+        professional[id].oscarsNumber =         request.body.oscarsNumber;
+        professional[id].profession =           request.body.profession;
 
 
         respuesta                   = {error: false, codigo: 200,

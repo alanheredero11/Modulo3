@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    
+
+    <link rel="stylesheet" href="style.css">
+    <title>Professional Library</title>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar__menu">
+            <p>Home</p>
+            <p>Library</p>
+            <p>Help</p>
+        </div>
+    </nav>
+    <div class="bodycenter">
+        <div class="bodycenter__header">
+            <h1 class="bodycenter__header--title">Professionals Catalog</h1>
+        </div>
+        <div class="bodycenter__formcontainer">
+            <form action="" class="bodycenter__formcontainer--form">
+                <div>
+                <label for="proName">Name: </label>
+                    <input type="text" name="proName" id="proName">
+                </div>
+
+                <div>
+                <label for="proAge">Age: </label>
+                    <input type="number" name="proAge" id="proAge">
+                </div>
+
+                <div>
+                <label for="proWeight">Weight: </label>
+                    <input type="number" name="proWeight" id="proWeight">
+                </div>
+                
+                <div>
+                <label for="proHeight">Height: </label>
+                    <input type="number" name="proHeight" id="proHeight">
+                </div>
+
+                <div>
+                <label for="proIsRetired">Is Retired: </label>
+                    <input type="text" name="proIsRetired" id="proIsRetired">
+                </div>
+
+                <div>
+                <label for="proNationality">Nationality: </label>
+                    <input type="text" name="Nationality" id="Nationality">
+                </div>
+
+                <div>
+                <label for="proOscarsNumber">Oscars Number: </label>
+                    <input type="number" name="OscarsNumber" id="OscarsNumber">
+                </div>
+
+                <div>
+                <label for="proProfession">Profession: </label>
+                    <input type="text" name="proProfession" id="proProfession">
+                </div>
+
+                <div>
+                <label for="proID">Professional ID: </label>
+                    <input type="text" name="proID" id="proID">
+                </div>
+
+            </form>
+        </div>
+        <div class="bodycenter__buttoncontainer">
+            <button class="bodycenter__buttoncontainer--button" onclick="postPro()">Create</button>
+            <button class="bodycenter__buttoncontainer--button" onclick="putPro()">Update</button>
+            <button class="bodycenter__buttoncontainer--button" onclick="deletePro() ">Delete</button>
+        </div>
+        <div class="bodycenter__showbuttoncontainer">
+            <button class="bodycenter__showbuttoncontainer--showbutton" onclick="getPro()">Show</button>
+        </div>
+    </div>
+
+    <div class="contenedor__resultados" id="resultado">
+
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
