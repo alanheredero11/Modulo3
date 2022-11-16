@@ -4,14 +4,14 @@ const proCtrl = require ("../controller/professionales.controller");
 
 router.get("/", proCtrl.getStart); 
 
-router.get("/professional", proCtrl.getPro);
+router.get("/professionales", proCtrl.getPro);
 
 // router.get("/professional/:id", proCtrl.getPro);
 
-router.post("/professional", proCtrl.postPro);
+router.post("/professionales", proCtrl.postPro);
 
-router.put("/professional", proCtrl.putPro);
+router.put("/professionales", proCtrl.putPro);
 
-router.delete("/professional", proCtrl.deletePro);
+router.delete("/professionales", proCtrl.deletePro);
 
 module.exports = router;
